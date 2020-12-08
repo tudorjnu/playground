@@ -154,9 +154,8 @@ let boundary: { [id: string]: number[][] } = {};
 let selectedNodeId: string = null;
 // Plot the heatmap.
 let xDomain: [number, number] = [-6, 6];
-let yDomain: [number, number] = [0, 6]; //added ydomain
 let heatMap =
-  new HeatMap(300, DENSITY, xDomain, yDomain, d3.select("#heatmap"),
+  new HeatMap(300, DENSITY, xDomain, xDomain, d3.select("#heatmap"),
     { showAxes: true });
 let linkWidthScale = d3.scale.linear()
   .domain([0, 5])

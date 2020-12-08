@@ -3,4 +3,5 @@ http://localhost:5000/#activation=tanh&batchSize=10&dataset=Plane&regDataset=reg
 datasets: gauss, circle, xor, spirall
 
 Activity 1 (Gauss):
-http://localhost:5000/#activation=tanh&batchSize=10&dataset=gauss&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=12&networkShape=1&seed=42&showTestData=false&discretize=false&percTrainData=5&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false
+
+http://localhost:5000/#activation=tanh&batchSize=10&dataset=gauss&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=1&seed=0.56652&showTestData=false&discretize=false&percTrainData=50&x=false&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false

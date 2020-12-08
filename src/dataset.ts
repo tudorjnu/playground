@@ -61,7 +61,7 @@ export function classifyTwoGaussData(numSamples: number, noise: number):
 
   function genGauss(cx: number, cy: number, label: number) {
     let x = 0;
-    let y = 5;
+    let y = 3;
     points.push({ x, y, label });
     // for (let i = 0; i < numSamples / 2; i++) {
     //   let x = normalRandom(cx, variance);
