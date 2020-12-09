@@ -3,5 +3,31 @@ http://localhost:5000/#activation=tanh&batchSize=10&dataset=Plane&regDataset=reg
 datasets: gauss, circle, xor, spirall
 
 Activity 1 (Gauss):
+http://localhost:5000/#activation=linear&batchSize=10&dataset=gauss&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=1&seed=0.56652&showTestData=false&discretize=false&percTrainData=50&x=false&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=true&hideText=false
 
-http://localhost:5000/#activation=tanh&batchSize=10&dataset=gauss&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=1&seed=0.56652&showTestData=false&discretize=false&percTrainData=50&x=false&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false
+Scenario 1:
+
+You are playing rock paper scisor with your friend and you decide that the person who wins is the person who reaches three wins.
+After the first game, you realise that the game ends quickly but you want to play more so you invent a new rule. You transform the
+wins into points and everytime you win a round, you receive a point but every time you add lose, you subtract a point from your points.
+
+1. What would be the result after the following sequence of rounds: [win, win, lose, win, lose, lose, lose, lose]
+
+Responses:
+* score = 3, you win
+* score = -3, you lose
+* score = [-3, 3] - not decided
+
+You quickly realise that counting the games seems more tedious than actually playing and you and your friend keep forgeting the count and start arguing about the rounds, so you decide to use an artificial neuron to do that.
+Every time you win, you add one to the bias, everytime you lose, you subtract one. Who will win after the following sequence:
+[win, lose, win, win ,lose, lose, win, lose, lose, win, win, win, win]
+
+Responses:
+* you
+* the opponent
+* no one
+
+
+Graphing Neurons:
+Scenario Two:
+
