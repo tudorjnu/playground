@@ -192,7 +192,7 @@ export class HeatMap {
     let selection = container.selectAll("circle").data(points);
 
     // Insert elements to match length of points array.
-    selection.enter().append("circle").attr("r", 10); //changed the radius from 3 to 10
+    selection.enter().append("circle").attr("r", 5); //changed the radius from 3 to 5
 
     // Update points to be in the correct position.
     selection

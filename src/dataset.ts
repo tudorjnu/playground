@@ -59,14 +59,25 @@ export function classifyTwoGaussData(numSamples: number, noise: number):
   let varianceScale = d3.scale.linear().domain([0, .5]).range([0.5, 4]);
   let variance = varianceScale(noise);
 
+  // changed a set of points
   function genGauss(cx: number, cy: number, label: number) {
-    let x = 0;
-    let y = 3;
-    points.push({ x, y, label });
+    for (let i = 0; i < 5; i++) {
+      let x = normalRandom(cx)
+      let y = 3
+      let label = 1;
+      points.push({ x, y, label });
+    }
+    for (let i = 0; i < 10; i++) {
+      let x = normalRandom(cy)
+      let y = 5
+      let label = -1;
+      points.push({ x, y, label });
+    }
+
     // for (let i = 0; i < numSamples / 2; i++) {
-    //   let x = normalRandom(cx, variance);
+    //   let x = normalRandom(cy, variance)
     //   let y = normalRandom(cy, variance);
-    //   points.push({x, y, label});
+    //   points.push({ x, y, label });
     // }
   }
 
