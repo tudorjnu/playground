@@ -65,11 +65,11 @@ interface InputFeature {
 let INPUTS: { [name: string]: InputFeature } = {
   "x": { f: (x, y) => x, label: "X_1" },
   "y": { f: (x, y) => y, label: "X_2" },
-  "xSquared": { f: (x, y) => x * x, label: "X_1^2" },
-  "ySquared": { f: (x, y) => y * y, label: "X_2^2" },
-  "xTimesY": { f: (x, y) => x * y, label: "X_1X_2" },
-  "sinX": { f: (x, y) => Math.sin(x), label: "sin(X_1)" },
-  "sinY": { f: (x, y) => Math.sin(y), label: "sin(X_2)" },
+  // "xSquared": { f: (x, y) => x * x, label: "X_1^2" },
+  // "ySquared": { f: (x, y) => y * y, label: "X_2^2" },
+  // "xTimesY": { f: (x, y) => x * y, label: "X_1X_2" },
+  // "sinX": { f: (x, y) => Math.sin(x), label: "sin(X_1)" },
+  // "sinY": { f: (x, y) => Math.sin(y), label: "sin(X_2)" },
 };
 
 let HIDABLE_CONTROLS = [
@@ -666,35 +666,36 @@ function addPlusMinusControl(x: number, layerIdx: number) {
 
   let i = layerIdx - 1;
   let firstRow = div.append("div").attr("class", `ui-numNodes${layerIdx}`);
-  firstRow.append("button")
-    .attr("class", "mdl-button mdl-js-button mdl-button--icon")
-    .on("click", () => {
-      let numNeurons = state.networkShape[i];
-      if (numNeurons >= 8) {
-        return;
-      }
-      state.networkShape[i]++;
-      parametersChanged = true;
-      reset();
-    })
-    .append("i")
-    .attr("class", "material-icons")
-    .text("add");
+  // uncomment the following rows to show the neuron buttons
+  // firstRow.append("button")
+  //   // .attr("class", "mdl-button mdl-js-button mdl-button--icon")
+  //   .on("click", () => {
+  //     let numNeurons = state.networkShape[i];
+  //     if (numNeurons >= 8) {
+  //       return;
+  //     }
+  //     state.networkShape[i]++;
+  //     parametersChanged = true;
+  //     reset();
+  //   })
+  //   .append("i")
+  // .attr("class", "material-icons")
+  // .text("add");
 
-  firstRow.append("button")
-    .attr("class", "mdl-button mdl-js-button mdl-button--icon")
-    .on("click", () => {
-      let numNeurons = state.networkShape[i];
-      if (numNeurons <= 1) {
-        return;
-      }
-      state.networkShape[i]--;
-      parametersChanged = true;
-      reset();
-    })
-    .append("i")
-    .attr("class", "material-icons")
-    .text("remove");
+  // firstRow.append("button")
+  //   .attr("class", "mdl-button mdl-js-button mdl-button--icon")
+  //   .on("click", () => {
+  //     let numNeurons = state.networkShape[i];
+  //     if (numNeurons <= 1) {
+  //       return;
+  //     }
+  //     state.networkShape[i]--;
+  //     parametersChanged = true;
+  //     reset();
+  //   })
+  //   .append("i")
+  // .attr("class", "material-icons")
+  // .text("remove");
 
   let suffix = state.networkShape[i] > 1 ? "s" : "";
   div.append("div").text(
