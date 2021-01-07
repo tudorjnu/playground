@@ -1,0 +1,52 @@
+Activity One:
+
+dataset=xor
+networkShape=1
+initZero=true
+numHiddenLayers_hide=true
+neuronButtons=false
+hideBar=true
+
+Link:
+#dataset=xor&networkShape=1&initZero=true&numHiddenLayers_hide=true&neuronButtons=false&hideBar=true
+
+
+Questions:
+* Do they go through epochs and errors? - take out if not, keep if yes
+
+Activity Two:
+
+dataset=gauss
+networkShape=2
+initZero=true
+hideBar=true
+numHiddenLayers_hide=true
+neuronButtons=false
+
+Link:
+#dataset=gauss&networkShape=2&initZero=true&hideBar=true&numHiddenLayers_hide=true&neuronButtons=false
+
+Activity Three:
+
+dataset=circle
+networkShape=3,1
+initZero=true
+hideBar=true
+numHiddenLayers_hide=true
+neuronButtons=false
+
+Link:
+#dataset=circle&networkShape=3,1&initZero=true&hideBar=true&numHiddenLayers_hide=true
+
+
+
+Activity Four:
+
+numHiddenLayers_hide=true
+networkShape=3
+dataset=spiral
+neuronButtons=true
+hideBar=false
+
+Link:
+#numHiddenLayers_hide=true&networkShape=3&dataset=spiral&playButton_hide=false&neuronButtons=true&hideBar=false
