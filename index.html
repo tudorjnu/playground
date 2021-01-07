@@ -60,8 +60,8 @@ limitations under the License.
   </header>
 
   <!-- Top Controls -->
-  <div hidden id="top-controls">
-    <div hidden class="container l--page">
+  <div id="top-controls">
+    <div class="container l--page">
       <div class="timeline-controls">
         <button class="mdl-button mdl-js-button mdl-button--icon ui-resetButton" id="reset-button"
           title="Reset the network">
@@ -152,7 +152,7 @@ limitations under the License.
   <div id="main-part" class="l--page">
 
     <!--  Data Column-->
-    <div class="column data">
+    <div hidden class="column data">
       <h4>
         <span>Data</span>
       </h4>
@@ -206,7 +206,7 @@ limitations under the License.
 
     <!-- Features Column -->
     <div class="column features">
-      <h4>Features</h4>
+      <!-- <h4>Features</h4> -->
       <!-- <p>Which properties do you want to feed in?</p> -->
       <div id="network">
         <svg id="svg" width="510" height="450">
@@ -219,7 +219,7 @@ limitations under the License.
         </svg>
         <!-- Hover card -->
         <div id="hovercard">
-          <div style="font-size:10px">Click anywhere to edit.</div>
+          <!-- <div style="font-size:10px">Click anywhere to edit.</div> -->
           <div><span class="type">Weight/Bias</span> is <span class="value">0.2</span><span><input
                 type="number" /></span>.</div>
         </div>
@@ -257,7 +257,7 @@ limitations under the License.
     <!-- Hidden Layers Column -->
     <div class="column hidden-layers">
       <h4>
-        <div hidden class="ui-numHiddenLayers">
+        <div class="ui-numHiddenLayers">
           <button id="add-layers" class="mdl-button mdl-js-button mdl-button--icon">
             <i class="material-icons">add</i>
           </button>

@@ -104,33 +104,35 @@ export interface Property {
 export class State {
 
   private static PROPS: Property[] = [
-    { name: "activation", type: Type.OBJECT, keyMap: activations },
-    { name: "regularization", type: Type.OBJECT, keyMap: regularizations },
-    { name: "batchSize", type: Type.NUMBER },
+    // { name: "activation", type: Type.OBJECT, keyMap: activations },
+    // { name: "regularization", type: Type.OBJECT, keyMap: regularizations },
+    // { name: "batchSize", type: Type.NUMBER },
     { name: "dataset", type: Type.OBJECT, keyMap: datasets },
-    { name: "regDataset", type: Type.OBJECT, keyMap: regDatasets },
-    { name: "learningRate", type: Type.NUMBER },
-    { name: "regularizationRate", type: Type.NUMBER },
-    { name: "noise", type: Type.NUMBER },
+    // { name: "regDataset", type: Type.OBJECT, keyMap: regDatasets },
+    // { name: "learningRate", type: Type.NUMBER },
+    // { name: "regularizationRate", type: Type.NUMBER },
+    // { name: "noise", type: Type.NUMBER },
     { name: "networkShape", type: Type.ARRAY_NUMBER },
-    { name: "seed", type: Type.STRING },
-    { name: "showTestData", type: Type.BOOLEAN },
-    { name: "discretize", type: Type.BOOLEAN },
-    { name: "percTrainData", type: Type.NUMBER },
-    { name: "x", type: Type.BOOLEAN },
-    { name: "y", type: Type.BOOLEAN },
-    { name: "xTimesY", type: Type.BOOLEAN },
-    { name: "xSquared", type: Type.BOOLEAN },
-    { name: "ySquared", type: Type.BOOLEAN },
-    { name: "cosX", type: Type.BOOLEAN },
-    { name: "sinX", type: Type.BOOLEAN },
-    { name: "cosY", type: Type.BOOLEAN },
-    { name: "sinY", type: Type.BOOLEAN },
-    { name: "collectStats", type: Type.BOOLEAN },
-    { name: "tutorial", type: Type.STRING },
-    { name: "problem", type: Type.OBJECT, keyMap: problems },
+    // { name: "seed", type: Type.STRING },
+    // { name: "showTestData", type: Type.BOOLEAN },
+    // { name: "discretize", type: Type.BOOLEAN },
+    // { name: "percTrainData", type: Type.NUMBER },
+    // { name: "x", type: Type.BOOLEAN },
+    // { name: "y", type: Type.BOOLEAN },
+    // { name: "xTimesY", type: Type.BOOLEAN },
+    // { name: "xSquared", type: Type.BOOLEAN },
+    // { name: "ySquared", type: Type.BOOLEAN },
+    // { name: "cosX", type: Type.BOOLEAN },
+    // { name: "sinX", type: Type.BOOLEAN },
+    // { name: "cosY", type: Type.BOOLEAN },
+    // { name: "sinY", type: Type.BOOLEAN },
+    // { name: "collectStats", type: Type.BOOLEAN },
+    // { name: "tutorial", type: Type.STRING },
+    // { name: "problem", type: Type.OBJECT, keyMap: problems },
     { name: "initZero", type: Type.BOOLEAN },
-    { name: "hideText", type: Type.BOOLEAN }
+    // { name: "hideText", type: Type.BOOLEAN }
+    { name: "neuronButtons", type: Type.BOOLEAN },
+    { name: 'hideBar', type: Type.BOOLEAN }
   ];
 
   [key: string]: any;
@@ -142,7 +144,7 @@ export class State {
   discretize = false;
   tutorial: string = null;
   percTrainData = 50;
-  activation = nn.Activations.TANH;
+  activation = nn.Activations.LINEAR;
   regularization: nn.RegularizationFunction = null;
   problem = Problem.CLASSIFICATION;
   initZero = true;
@@ -163,6 +165,8 @@ export class State {
   dataset: dataset.DataGenerator = dataset.classifyXORData;
   regDataset: dataset.DataGenerator = dataset.regressPlane;
   seed: string;
+  neuronButtons = false;
+  hideBar = true;
 
   /**
    * Deserializes the state from the url hash.
@@ -256,7 +260,7 @@ export class State {
         type === Type.ARRAY_STRING) {
         value = value.join(",");
       }
-      props.push(`${name}=${value}`);
+      props.push(`${name}=${value}`); // this is the one that controls the link
     });
     // Serialize properties that correspond to hiding UI controls.
     getHideProps(this).forEach(prop => {

@@ -61,28 +61,15 @@ export function classifyTwoGaussData(numSamples: number, noise: number):
 
   // changed a set of points
   function genGauss(cx: number, cy: number, label: number) {
-    // for (let i = 0; i < 5; i++) {
-    //   let x = normalRandom(cx)
-    //   let y = 3
-    //   let label = 1;
-    //   points.push({ x, y, label });
-    // }
-    // for (let i = 0; i < 10; i++) {
-    //   let x = normalRandom(cy)
-    //   let y = 5
-    //   let label = -1;
-    //   points.push({ x, y, label });
-    // }
-
     for (let i = 0; i < numSamples / 2; i++) {
-      let x = normalRandom(cy, variance)
+      let x = normalRandom(cy + 2, variance)
       let y = normalRandom(cy, variance);
       points.push({ x, y, label });
     }
   }
 
-  genGauss(2, 2, 1); // Gaussian with positive examples.
-  genGauss(-2, -2, -1); // Gaussian with negative examples.
+  genGauss(2, 3, 1); // Gaussian with positive examples.
+  genGauss(5, -1, -1); // Gaussian with negative examples.
   return points;
 }
 

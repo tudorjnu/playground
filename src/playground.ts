@@ -392,6 +392,11 @@ function makeGUI() {
     d3.select("div.more").style("display", "none");
     d3.select("header").style("display", "none");
   }
+  // added href to change the link
+  if (state.hideBar) {
+    d3.select("#top-controls").style("display", "none");
+  }
+
 }
 
 function updateBiasesUI(network: nn.Node[][]) {
@@ -663,44 +668,46 @@ function addPlusMinusControl(x: number, layerIdx: number) {
   let div = d3.select("#network").append("div")
     .classed("plus-minus-neurons", true)
     .style("left", `${x - 10}px`);
-
   let i = layerIdx - 1;
   let firstRow = div.append("div").attr("class", `ui-numNodes${layerIdx}`);
-  // uncomment the following rows to show the neuron buttons
-  // firstRow.append("button")
-  //   // .attr("class", "mdl-button mdl-js-button mdl-button--icon")
-  //   .on("click", () => {
-  //     let numNeurons = state.networkShape[i];
-  //     if (numNeurons >= 8) {
-  //       return;
-  //     }
-  //     state.networkShape[i]++;
-  //     parametersChanged = true;
-  //     reset();
-  //   })
-  //   .append("i")
-  // .attr("class", "material-icons")
-  // .text("add");
+  // created an if clause to hide the neurons buttons
 
-  // firstRow.append("button")
-  //   .attr("class", "mdl-button mdl-js-button mdl-button--icon")
-  //   .on("click", () => {
-  //     let numNeurons = state.networkShape[i];
-  //     if (numNeurons <= 1) {
-  //       return;
-  //     }
-  //     state.networkShape[i]--;
-  //     parametersChanged = true;
-  //     reset();
-  //   })
-  //   .append("i")
-  // .attr("class", "material-icons")
-  // .text("remove");
+  if (state.neuronButtons) {
+    firstRow.append("button")
+      .attr("class", "mdl-button mdl-js-button mdl-button--icon")
+      .on("click", () => {
+        let numNeurons = state.networkShape[i];
+        if (numNeurons >= 8) {
+          return;
+        }
+        state.networkShape[i]++;
+        parametersChanged = true;
+        reset();
+      })
+      .append("i")
+      .attr("class", "material-icons")
+      .text("add");
 
-  let suffix = state.networkShape[i] > 1 ? "s" : "";
-  div.append("div").text(
-    state.networkShape[i] + " neuron" + suffix
-  );
+    firstRow.append("button")
+      .attr("class", "mdl-button mdl-js-button mdl-button--icon")
+      .on("click", () => {
+        let numNeurons = state.networkShape[i];
+        if (numNeurons <= 1) {
+          return;
+        }
+        state.networkShape[i]--;
+        parametersChanged = true;
+        reset();
+      })
+      .append("i")
+      .attr("class", "material-icons")
+      .text("remove");
+
+    let suffix = state.networkShape[i] > 1 ? "s" : "";
+    div.append("div").text(
+      state.networkShape[i] + " neuron" + suffix
+    );
+  }
 }
 
 function updateHoverCard(type: HoverType, nodeOrLink?: nn.Node | nn.Link,
