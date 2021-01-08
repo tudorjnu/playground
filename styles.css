@@ -166,12 +166,12 @@ body {
 }
 
 .github-link {
-  width: 160px;
+  width: 180px;
   height: 80px;
   position: absolute;
   display: block;
-  top: 0;
-  right: 0;
+  top: 5px;
+  right: 12px;
   z-index: 1000;
 }
 
