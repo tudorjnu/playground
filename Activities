@@ -1,3 +1,5 @@
+liverpool-outreach.herokuapp.com
+
 Activity One:
 
 dataset=xor
@@ -24,7 +26,7 @@ numHiddenLayers_hide=true
 neuronButtons=false
 
 Link:
-#dataset=gauss&networkShape=2&initZero=true&hideBar=true&numHiddenLayers_hide=true&neuronButtons=false
+#dataset=gauss&networkShape=1&initZero=true&hideBar=true&numHiddenLayers_hide=true&neuronButtons=false
 
 Activity Three:
 
@@ -39,6 +41,8 @@ Link:
 #dataset=circle&networkShape=3,1&initZero=true&hideBar=true&numHiddenLayers_hide=true
 
 
+With gradient descent:
+#activation=tanh&dataset=circle&networkShape=3,1&initZero=true&hideBar=false&numHiddenLayers_hide=true
 
 
 

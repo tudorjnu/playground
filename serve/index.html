@@ -45,17 +45,18 @@ limitations under the License.
 
 <body>
   <!-- GitHub link -->
-  <a class="github-link" href="https://www.liverpool.ac.uk/" title="University of Liverpool" target="_blank">
-    <img class="github-link" alt="University of liverpool" title="University of Liverpool"
-      src="https://www.biofilms.ac.uk/wp-content/uploads/2019/08/nbic-university-of-liverpool-logo.png"
-      href="https://www.liverpool.ac.uk/">
+  <a class="github-link" href="https://github.com/tensorflow/playground" title="Source on GitHub" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60.5 60.5"
+      width="60" height="60">
+      <polygon class="bg" points="60.5,60.5 0,0 60.5,0 " />
+      <path class="icon"
+        d="M43.1,5.8c-6.6,0-12,5.4-12,12c0,5.3,3.4,9.8,8.2,11.4c0.6,0.1,0.8-0.3,0.8-0.6c0-0.3,0-1,0-2c-3.3,0.7-4-1.6-4-1.6c-0.5-1.4-1.3-1.8-1.3-1.8c-1.1-0.7,0.1-0.7,0.1-0.7c1.2,0.1,1.8,1.2,1.8,1.2c1.1,1.8,2.8,1.3,3.5,1c0.1-0.8,0.4-1.3,0.8-1.6c-2.7-0.3-5.5-1.3-5.5-5.9c0-1.3,0.5-2.4,1.2-3.2c-0.1-0.3-0.5-1.5,0.1-3.2c0,0,1-0.3,3.3,1.2c1-0.3,2-0.4,3-0.4c1,0,2,0.1,3,0.4c2.3-1.6,3.3-1.2,3.3-1.2c0.7,1.7,0.2,2.9,0.1,3.2c0.8,0.8,1.2,1.9,1.2,3.2c0,4.6-2.8,5.6-5.5,5.9c0.4,0.4,0.8,1.1,0.8,2.2c0,1.6,0,2.9,0,3.3c0,0.3,0.2,0.7,0.8,0.6c4.8-1.6,8.2-6.1,8.2-11.4C55.1,11.2,49.7,5.8,43.1,5.8z" />
+    </svg>
   </a>
-
   <!-- Header -->
   <header>
-    <h1><b>Exploring Neural Networks</b>
+    <h1 class="l--page"><b>Neural Networks</b><br>With University of Liverpool</h1>
   </header>
-
 
   <!-- Top Controls -->
   <div id="top-controls">
@@ -160,7 +161,7 @@ limitations under the License.
           <div class="dataset" title="Circle">
             <canvas class="data-thumbnail" data-dataset="circle"></canvas>
           </div>
-          <div class="dataset" title="Almost One Dimension">
+          <div class="dataset" title="Exclusive or">
             <canvas class="data-thumbnail" data-dataset="xor"></canvas>
           </div>
           <div class="dataset" title="Gaussian">
@@ -204,8 +205,8 @@ limitations under the License.
 
     <!-- Features Column -->
     <div class="column features">
-      <!-- <h4>Features</h4> -->
-      <!-- <p>Which properties do you want to feed in?</p> -->
+      <h4>Features</h4>
+      <p>Which properties do you want to feed in?</p>
       <div id="network">
         <svg id="svg" width="510" height="450">
           <defs>
@@ -217,7 +218,7 @@ limitations under the License.
         </svg>
         <!-- Hover card -->
         <div id="hovercard">
-          <!-- <div style="font-size:10px">Click anywhere to edit.</div> -->
+          <div style="font-size:10px">Click anywhere to edit.</div>
           <div><span class="type">Weight/Bias</span> is <span class="value">0.2</span><span><input
                 type="number" /></span>.</div>
         </div>
@@ -255,7 +256,7 @@ limitations under the License.
     <!-- Hidden Layers Column -->
     <div class="column hidden-layers">
       <h4>
-        <div class="ui-numHiddenLayers">
+        <div hidden class="ui-numHiddenLayers">
           <button id="add-layers" class="mdl-button mdl-js-button mdl-button--icon">
             <i class="material-icons">add</i>
           </button>
@@ -288,15 +289,15 @@ limitations under the License.
         <div style="display:flex; align-items:center;">
 
           <!-- Gradient color scale -->
-          <div hidden class="label" style="width:105px; margin-right: 10px">
+          <div class="label" style="width:105px; margin-right: 10px">
             Colors shows data, neuron and weight values.
           </div>
-          <svg hidden width="150" height="30" id="colormap">
+          <svg width="150" height="30" id="colormap">
             <defs>
               <linearGradient id="gradient" x1="0%" y1="100%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#031F73" stop-opacity="1"></stop>
+                <stop offset="0%" stop-color="#f59322" stop-opacity="1"></stop>
                 <stop offset="50%" stop-color="#e8eaeb" stop-opacity="1"></stop>
-                <stop offset="100%" stop-color="#A17700" stop-opacity="1"></stop>
+                <stop offset="100%" stop-color="#0877bd" stop-opacity="1"></stop>
               </linearGradient>
             </defs>
             <g class="core" transform="translate(3, 0)">
@@ -305,7 +306,7 @@ limitations under the License.
           </svg>
         </div>
         <br />
-        <div hidden style="display:flex;">
+        <div style="display:flex;">
           <label class="ui-showTestData mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="show-test-data">
             <input type="checkbox" id="show-test-data" class="mdl-checkbox__input" checked>
             <span class="mdl-checkbox__label label">Show test data</span>
@@ -340,7 +341,7 @@ limitations under the License.
 
     </div>
 
-    <div hidden class="l--body">
+    <div class="l--body">
       <h2>What Do All the Colors Mean?</h2>
       <p>Orange and blue are used throughout the visualization in slightly different ways, but in general orange shows
         negative values while blue shows positive values.</p>
