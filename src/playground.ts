@@ -63,8 +63,8 @@ interface InputFeature {
 }
 
 let INPUTS: { [name: string]: InputFeature } = {
-  "x": { f: (x, y) => x, label: "X_1" },
-  "y": { f: (x, y) => y, label: "X_2" },
+  "x": { f: (x, y) => x, label: "X" },
+  "y": { f: (x, y) => y, label: "Y" },
   // "xSquared": { f: (x, y) => x * x, label: "X_1^2" },
   // "ySquared": { f: (x, y) => y * y, label: "X_2^2" },
   // "xTimesY": { f: (x, y) => x * y, label: "X_1X_2" },

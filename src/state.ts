@@ -132,7 +132,8 @@ export class State {
     { name: "initZero", type: Type.BOOLEAN },
     // { name: "hideText", type: Type.BOOLEAN }
     { name: "neuronButtons", type: Type.BOOLEAN },
-    { name: 'hideBar', type: Type.BOOLEAN }
+    { name: 'hideBar', type: Type.BOOLEAN },
+    { name: 'activity', type: Type.NUMBER },
   ];
 
   [key: string]: any;
