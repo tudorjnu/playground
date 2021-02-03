@@ -135,6 +135,11 @@ export class State {
     { name: 'hideBar', type: Type.BOOLEAN }
   ];
 
+
+// Activity single neurons
+// #activation=tanh&batchSize=10&dataset=gauss&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=1&seed=0.51547&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=true&neuronButtons=false&hideBar=true&numHiddenLayers_hide=true
+// Set default 
+
   [key: string]: any;
   learningRate = 0.03;
   regularizationRate = 0;
@@ -144,7 +149,7 @@ export class State {
   discretize = false;
   tutorial: string = null;
   percTrainData = 50;
-  activation = nn.Activations.LINEAR;
+  activation = nn.Activations.TANH;
   regularization: nn.RegularizationFunction = null;
   problem = Problem.CLASSIFICATION;
   initZero = true;
@@ -162,11 +167,12 @@ export class State {
   sinX = false;
   cosY = false;
   sinY = false;
-  dataset: dataset.DataGenerator = dataset.classifyXORData;
+  dataset: dataset.DataGenerator = dataset.classifyTwoGaussData;
   regDataset: dataset.DataGenerator = dataset.regressPlane;
-  seed: string;
+  seed: string = "0.51547"; // 0.51547
   neuronButtons = false;
   hideBar = true;
+  numHiddenLayers_hide = true;
 
   /**
    * Deserializes the state from the url hash.
@@ -266,7 +272,7 @@ export class State {
     getHideProps(this).forEach(prop => {
       props.push(`${prop}=${this[prop]}`);
     });
-    window.location.hash = props.join("&");
+    //window.location.hash = props.join("&"); // comment out to not show parameter in URL
   }
 
   /** Returns all the hidden properties. */

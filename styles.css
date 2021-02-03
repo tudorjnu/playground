@@ -416,6 +416,7 @@ header h1 .optional {
 }
 
 #main-part p,
+#main-part ol,
 #main-part .column .label,
 #main-part .column label {
   font-weight: 300;
@@ -868,7 +869,8 @@ article :first-child h2 {
   margin-top: 0;
 }
 
-article p {
+article p, 
+article ol {
   font-weight: 400;
   font-size: 17px;
   line-height: 1.6;
