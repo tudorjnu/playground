@@ -332,43 +332,52 @@ limitations under the License.
 
   <article id="article-text">
     <div class="l--body">
-      <h2>How can connecting neurons help?</h2>
+      <h2>Can gradient descent do the hard work for us?</h2>
       <p>
-        In this activity, there are more neurons, and the output of the left
-        neurons is fed as input to the right neuron. 
-        Many more weights and biases to play with!
+        This activity is the same the previous one, except that this time you
+        will not have to manually find suitable weights and biases, but you will
+        be able to let the <em>gradient-descent algorithm</em> find good parameters
+        for you!
       </p>
-      <p><em>Can you adjust the parameters to separate the blue and golden points?</em></p>
       <ol>
-        <li>Play with incoming and outgoing <strong>weights</strong>: Click on the dashed lines 
-          and change the weight in the popup.<br/> 
-          (Use the <i class="fas fa-caret-square-up"></i> up and <i class="fas fa-caret-square-down"></i> down keys, or type a number.)</li>
-        <li>Play with the neuron's <strong>bias</strong>: Click on the little square at bottom left corner
-          and change the bias in the popup.<br/> 
-          (Use the <i class="fas fa-caret-square-up"></i> up and <i class="fas fa-caret-square-down"></i> down keys, or type a number.)</li>
+        <li>
+          Click on the <i class="fas fa-play-circle"></i> play button to start
+          the neural network training.
+        </li>
+        <li>
+          You will have to give the gradient-descent algorithm some non-zero 
+          initial values for the parameters!<br/>
+          Use the popups as before to initialize weights and biases.          
+        </li>
       </ol>
       
     <h2>Explanation</h2>
       <p>
-        In this activity, we connect neurons to form a neural network.
-        Here, the left three neurons form a <em>hidden layer</em> because their
-        outputs are not visible to the outside world, but are only used as input
-        to other neurons. The right neuron forms the <em>output layer</em>.
-        Real-life leural networks are many times bigger, and often have
-        a dozen of hidden layers (<em>deep neural networks</em>).
+        In this activity, you use the gradient-descent algorithm to find good
+        parameters for the neural network.
+        It is quite impressive to see, how quickly it reaches a near-perfect seapration!
       </p>
       <p>
-        The activity shows that even with just a very small neural network,
-        one can describe various geometric shapes and classify points based
-        on these (such as the circle here, separating “inside” from “outside”).
-        Indeed, researchers have proven that a sufficiently large neural 
-        network can approximate <em>any</em> geometric shape.
+        Gradient descent is a local optimization algorithm: The algorithm
+        proceeds in rounds. In each round, it is computed how each weight
+        and each bias influenced the final prediction of each data point.
+        Based on that, and which data points are currently incorrectly classified,
+        a <em>suggested improvement</em> (the “gradient”) is computed and
+        added to the current value of all parameters.
+        Each step makes the prediction slightly better (on the training data!).
       </p>
       <p>
-        As you may have experienced, finding good weights and biases becomes
-        more challenging when the number of these parameters becomes large.
-        Also, the influence of a small change, in particular in the hidden layer,
-        becomes very hard to predict or understand.
+        Over time, the gradient-descent method reaches a state in which no 
+        further improvements happen (a <em>stationary state</em>);
+        then the parameters remain unchanged.
+      </p>
+      <p>
+        An important limitation of such local optimization methods is that
+        they depend on the starting state. For example, 
+        having all weights and biases equal to zero is a stationary state,
+        but clearly not one that yields a good prediction!
+        Luckily, for most neural networks it works just fine to start 
+        with randomly chosen initial values.
       </p>
     </div>
 

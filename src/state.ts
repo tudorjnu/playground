@@ -170,7 +170,7 @@ export class State {
   regDataset: dataset.DataGenerator = dataset.regressPlane;
   seed: string = "0.51547"; // 0.51547
   neuronButtons = false;
-  hideBar = true;
+  hideBar = false;
   numHiddenLayers_hide = true;
 
   /**
