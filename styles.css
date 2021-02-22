@@ -55,11 +55,15 @@ body {
   margin: 0;
 }
 
-.l--body {
+.l--body,
+.l--body-small
+{
   width: 550px;
   margin-left: auto;
   margin-right: auto;
 }
+
+
 
 .l--page {
   width: 944px;
@@ -876,6 +880,10 @@ article ol {
   line-height: 1.6;
   color: rgba(0, 0, 0, 0.7);
 
+}
+
+.l--body-small p {
+  font-size: 14px;
 }
 
 /* Footer */

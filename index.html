@@ -41,6 +41,7 @@ limitations under the License.
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500|Material+Icons" rel="stylesheet"
     type="text/css">
   <script src="lib.js"></script>
+  <script src="https://kit.fontawesome.com/cd6cccaafa.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -332,32 +333,47 @@ limitations under the License.
   <article id="article-text">
     <div class="l--body">
       <h2>What can a single neuron do?</h2>
-      <p>Can you adjust the parameters to separate the blue and golden points?</p>
+      <p><em>Can you adjust the parameters to separate the blue and golden points?</em></p>
       <ol>
-        <li>Play with incoming and outgoing weights: Click on the dashed lines 
-          and change the weight in the popup.</li>
-        <li>Play with the neuron's bias: Click on the little square at left bottom corner
-          and change the bias in the popup.</li>
+        <li>Play with incoming and outgoing <strong>weights</strong>: Click on the dashed lines 
+          and change the weight in the popup.<br/> 
+          (Use the <i class="fas fa-caret-square-up"></i> up and <i class="fas fa-caret-square-down"></i> down keys, or type a number.)</li>
+        <li>Play with the neuron's <strong>bias</strong>: Click on the little square at bottom left corner
+          and change the bias in the popup.<br/> 
+          (Use the <i class="fas fa-caret-square-up"></i> up and <i class="fas fa-caret-square-down"></i> down keys, or type a number.)</li>
       </ol>
       
+    <h2>Explanation</h2>
+      <p>
+        This activity shows that a single neuron can draw a straight line 
+        whose slope and intercept are controlled by weights and bias, respectively.
+        It classifies points by which side of the line they lie on.
+        For points <em>on</em> the line, the prediction is half-half for both classes,
+        but when moving away from the line, the prediction becomes very quickly more confident for one class.
+      </p>
+      <p>
+        A similar type of separation also works for higher dimensions.
+        Point sets that can be separated in this way (with a single neuron) 
+        are called <em>linearly separable</em>.
+      </p>
     </div>
 
-    <div hidden class="l--body">
-      <h2>What Do All the Colors Mean?</h2>
-      <p>Orange and blue are used throughout the visualization in slightly different ways, but in general orange shows
-        negative values while blue shows positive values.</p>
-      <p>The data points (represented by small circles) are initially colored orange or blue, which correspond to
-        positive one and negative one.</p>
-      <p>In the hidden layers, the lines are colored by the weights of the connections between neurons. Blue shows a
-        positive weight, which means the network is using that output of the neuron as given. An orange line shows that
-        the network is assiging a negative weight.</p>
-      <p>In the output layer, the dots are colored orange or blue depending on their original values. The background
+    <div class="l--body-small" style="padding-top: 10em;" >
+      <h3>What do the colors mean?</h3>
+      <p>Blue and gold are used throughout the visualization in slightly different ways, but in general blue shows
+        negative values while gold shows positive values.</p>
+      <p>The data points (represented by small circles) are colored gold or blue, 
+        which correspond to positive one and negative one (the classes of data points).</p>
+      <p>In the hidden layers, the lines are colored by the weights of the connections between neurons. Gold shows a
+        positive weight, which means the network is using that output of the neuron as given. A blue line shows that
+        the network is assigning a negative weight.</p>
+      <p>In the output layer, the dots are colored gold or blue depending on their original values. The background
         color shows what the network is predicting for a particular area. The intensity of the color shows how confident
         that prediction is.</p>
     </div>
 
     <div class="l--body">
-      <p style="padding-top: 10em;">
+      <p style="padding-top: 3em;">
       <small>
         Based on Tensorflow Playground by Daniel Smilkov and Shan Carter.
       </small>
