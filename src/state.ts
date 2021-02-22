@@ -136,10 +136,9 @@ export class State {
   ];
 
 
-// Activity single neurons
-// #activation=tanh&batchSize=10&dataset=gauss&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=1&seed=0.51547&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=true&neuronButtons=false&hideBar=true&numHiddenLayers_hide=true
+// Activity chained neurons on circle data set
+// #dataset=circle&networkShape=3,1&initZero=true&hideBar=true&numHiddenLayers_hide=true
 // Set default 
-
   [key: string]: any;
   learningRate = 0.03;
   regularizationRate = 0;
@@ -148,16 +147,16 @@ export class State {
   batchSize = 10;
   discretize = false;
   tutorial: string = null;
-  percTrainData = 50;
+  percTrainData = 90;
   activation = nn.Activations.TANH;
   regularization: nn.RegularizationFunction = null;
   problem = Problem.CLASSIFICATION;
   initZero = true;
   hideText = false;
   collectStats = false;
-  numHiddenLayers = 1;
+  numHiddenLayers = 2;
   hiddenLayerControls: any[] = [];
-  networkShape: number[] = [1];
+  networkShape: number[] = [3,1];
   x = true;
   y = true;
   xTimesY = false;
@@ -167,7 +166,7 @@ export class State {
   sinX = false;
   cosY = false;
   sinY = false;
-  dataset: dataset.DataGenerator = dataset.classifyTwoGaussData;
+  dataset: dataset.DataGenerator = dataset.classifyCircleData;
   regDataset: dataset.DataGenerator = dataset.regressPlane;
   seed: string = "0.51547"; // 0.51547
   neuronButtons = false;

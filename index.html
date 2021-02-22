@@ -332,7 +332,12 @@ limitations under the License.
 
   <article id="article-text">
     <div class="l--body">
-      <h2>What can a single neuron do?</h2>
+      <h2>How can connecting neurons help?</h2>
+      <p>
+        In this activity, there are more neurons, and the output of the left
+        neurons is fed as input to the right neuron. 
+        Many more weights and biases to play with!
+      </p>
       <p><em>Can you adjust the parameters to separate the blue and golden points?</em></p>
       <ol>
         <li>Play with incoming and outgoing <strong>weights</strong>: Click on the dashed lines 
@@ -345,16 +350,25 @@ limitations under the License.
       
     <h2>Explanation</h2>
       <p>
-        This activity shows that a single neuron can draw a straight line 
-        whose slope and intercept are controlled by weights and bias, respectively.
-        It classifies points by which side of the line they lie on.
-        For points <em>on</em> the line, the prediction is half-half for both classes,
-        but when moving away from the line, the prediction becomes very quickly more confident for one class.
+        In this activity, we connect neurons to form a neural network.
+        Here, the left three neurons form a <em>hidden layer</em> because their
+        outputs are not visible to the outside world, but are only used as input
+        to other neurons. The right neuron forms the <em>output layer</em>.
+        Real-life leural networks are many times bigger, and often have
+        a dozen of hidden layers (<em>deep neural networks</em>).
       </p>
       <p>
-        A similar type of separation also works for higher dimensions.
-        Point sets that can be separated in this way (with a single neuron) 
-        are called <em>linearly separable</em>.
+        The activity shows that even with just a very small neural network,
+        one can describe various geometric shapes and classify points based
+        on these (such as the circle here, separating “inside” from “outside”).
+        Indeed, researchers have proven that a sufficiently large neural 
+        network can approximate <em>any</em> geometric shape.
+      </p>
+      <p>
+        As you may have experienced, finding good weights and biases becomes
+        more challenging when the number of these parameters becomes large.
+        Also, the influence of a small change, in particular in the hidden layer,
+        becomes very hard to predict or understand.
       </p>
     </div>
 
