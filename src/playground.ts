@@ -963,8 +963,13 @@ function reset(onStartup = false) {
   let shape = [numInputs].concat(state.networkShape).concat([1]);
   let outputActivation = (state.problem === Problem.REGRESSION) ?
     nn.Activations.LINEAR : nn.Activations.TANH;
+  // Create network  
+  if (state.alwaysRandomizeNNParams) {
+    Math.seedrandom(new Date().toString());
+  }
   network = nn.buildNetwork(shape, state.activation, outputActivation,
     state.regularization, constructInputIds(), state.initZero);
+    
   lossTrain = getLoss(network, trainData);
   lossTest = getLoss(network, testData);
   drawNetwork(network);
@@ -1073,12 +1078,12 @@ function hideControls() {
 }
 
 function generateData(firstTime = false) {
-  if (!firstTime) {
-    // Change the seed.
-    state.seed = Math.random().toFixed(5);
-    state.serialize();
-    userHasInteracted();
-  }
+  // if (!firstTime) {
+  //   // Change the seed.
+  //   state.seed = Math.random().toFixed(5);
+  //   state.serialize();
+  //   userHasInteracted();
+  // }
   Math.seedrandom(state.seed);
   let numSamples = (state.problem === Problem.REGRESSION) ?
     NUM_SAMPLES_REGRESS : NUM_SAMPLES_CLASSIFY;
