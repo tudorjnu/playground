@@ -152,7 +152,7 @@ export class State {
   activation = nn.Activations.TANH;
   regularization: nn.RegularizationFunction = null;
   problem = Problem.CLASSIFICATION;
-  initZero = true;
+  initZero = false;
   hideText = false;
   collectStats = false;
   numHiddenLayers = 1;
