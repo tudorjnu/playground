@@ -169,11 +169,15 @@ export class State {
   sinY = false;
   dataset: dataset.DataGenerator = dataset.classifySpiralData;
   regDataset: dataset.DataGenerator = dataset.regressPlane;
-  seed: string = "0.51547"; // 0.51547
+  seed: string = "0.51547"; 
   neuronButtons = true;
   hideBar = false;
   numHiddenLayers_hide = false;
-
+  
+  // local additions; not added to URL (yet)
+  alwaysRandomizeNNParams = true;
+  setOutputWeightToOne = false;
+  
   /**
    * Deserializes the state from the url hash.
    */

@@ -47,8 +47,8 @@ function scrollTween(offset) {
   };
 }
 
-const RECT_SIZE = 30;
-const BIAS_SIZE = 5;
+const RECT_SIZE = 50;
+const BIAS_SIZE = 25;
 const NUM_SAMPLES_CLASSIFY = 500;
 const NUM_SAMPLES_REGRESS = 1200;
 const DENSITY = 100;
@@ -159,7 +159,7 @@ let heatMap =
     { showAxes: true });
 let linkWidthScale = d3.scale.linear()
   .domain([0, 5])
-  .range([1, 10])
+  .range([3, 15])
   .clamp(true);
 let colorScale = d3.scale.linear<string, number>()
   .domain([-1, 0, 1])
@@ -485,8 +485,8 @@ function drawNode(cx: number, cy: number, nodeId: string, isInput: boolean,
     nodeGroup.append("rect")
       .attr({
         id: `bias-${nodeId}`,
-        x: -BIAS_SIZE - 2,
-        y: RECT_SIZE - BIAS_SIZE + 3,
+        x: -BIAS_SIZE - 5,
+        y: RECT_SIZE - BIAS_SIZE + 10,
         width: BIAS_SIZE,
         height: BIAS_SIZE,
       }).on("mouseenter", function () {
@@ -963,8 +963,15 @@ function reset(onStartup = false) {
   let shape = [numInputs].concat(state.networkShape).concat([1]);
   let outputActivation = (state.problem === Problem.REGRESSION) ?
     nn.Activations.LINEAR : nn.Activations.TANH;
+  // Create network  
+  if (state.alwaysRandomizeNNParams) {
+    Math.seedrandom(new Date().toString());
+  }
   network = nn.buildNetwork(shape, state.activation, outputActivation,
     state.regularization, constructInputIds(), state.initZero);
+  if (state.setOutputWeightToOne) {
+    nn.getOutputNode(network).inputLinks[0].weight = 1;
+  }
   lossTrain = getLoss(network, trainData);
   lossTest = getLoss(network, testData);
   drawNetwork(network);
@@ -1073,12 +1080,12 @@ function hideControls() {
 }
 
 function generateData(firstTime = false) {
-  if (!firstTime) {
-    // Change the seed.
-    state.seed = Math.random().toFixed(5);
-    state.serialize();
-    userHasInteracted();
-  }
+  // if (!firstTime) {
+  //   // Change the seed.
+  //   state.seed = Math.random().toFixed(5);
+  //   state.serialize();
+  //   userHasInteracted();
+  // }
   Math.seedrandom(state.seed);
   let numSamples = (state.problem === Problem.REGRESSION) ?
     NUM_SAMPLES_REGRESS : NUM_SAMPLES_CLASSIFY;
