@@ -174,7 +174,9 @@ export class State {
   hideBar = true;
   numHiddenLayers_hide = true;
   
+  // local additions; not added to URL (yet)
   alwaysRandomizeNNParams = true;
+  setOutputWeightToOne = true;
   
   /**
    * Deserializes the state from the url hash.

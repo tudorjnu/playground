@@ -969,7 +969,9 @@ function reset(onStartup = false) {
   }
   network = nn.buildNetwork(shape, state.activation, outputActivation,
     state.regularization, constructInputIds(), state.initZero);
-    
+  if (state.setOutputWeightToOne) {
+    nn.getOutputNode(network).inputLinks[0].weight = 1;
+  }
   lossTrain = getLoss(network, trainData);
   lossTest = getLoss(network, testData);
   drawNetwork(network);
