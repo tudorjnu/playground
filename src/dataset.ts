@@ -62,14 +62,14 @@ export function classifyTwoGaussData(numSamples: number, noise: number):
   // changed a set of points
   function genGauss(cx: number, cy: number, label: number) {
     for (let i = 0; i < numSamples / 2; i++) {
-      let x = normalRandom(cy + 2, variance)
+      let x = normalRandom(cx, variance)
       let y = normalRandom(cy, variance);
       points.push({ x, y, label });
     }
   }
 
-  genGauss(2, 3, 1); // Gaussian with positive examples.
-  genGauss(5, -1, -1); // Gaussian with negative examples.
+  genGauss(5, 3, 1); // Gaussian with positive examples.
+  genGauss(1, -1, -1); // Gaussian with negative examples.
   return points;
 }
 
@@ -193,31 +193,63 @@ export function classifyXORData(numSamples: number, noise: number):
   function getXORLabel(p: Point) { return p.x * p.y >= 0 ? 1 : -1; }
   // changed the points 
   let points: Example2D[] = [];
-  for (let i = 0; i < 5; i++) {
-    let x = normalRandom(0, 3)
-    let y = 3
-    let label = 1;
-    points.push({ x, y, label });
-  }
-  for (let i = 0; i < 10; i++) {
-    let x = normalRandom(0, 3)
-    let y = 5
-    let label = -1;
-    points.push({ x, y, label });
-  }
-  // for (let i = 0; i < numSamples; i++) {
-  //   let x = randUniform(-5, 5);
-  //   let padding = 0.3;
-  //   x += x > 0 ? padding : -padding;  // Padding.
-  //   let y = randUniform(-5, 5);
-  //   y += y > 0 ? padding : -padding;
-  //   let noiseX = randUniform(-5, 5) * noise;
-  //   let noiseY = randUniform(-5, 5) * noise;
-  //   let label = getXORLabel({ x: x + noiseX, y: y + noiseY });
+  // for (let i = 0; i < 5; i++) {
+  //   let x = normalRandom(0, 3)
+  //   let y = 3
+  //   let label = 1;
   //   points.push({ x, y, label });
   // }
+  // for (let i = 0; i < 10; i++) {
+  //   let x = normalRandom(0, 3)
+  //   let y = 5
+  //   let label = -1;
+  //   points.push({ x, y, label });
+  // }
+  for (let i = 0; i < numSamples; i++) {
+    let x = randUniform(-5, 5);
+    let padding = 0.3;
+    x += x > 0 ? padding : -padding;  // Padding.
+    let y = randUniform(-5, 5);
+    y += y > 0 ? padding : -padding;
+    let noiseX = randUniform(-5, 5) * noise;
+    let noiseY = randUniform(-5, 5) * noise;
+    let label = getXORLabel({ x: x + noiseX, y: y + noiseY });
+    points.push({ x, y, label });
+  }
   return points;
 }
+
+export function classifySineData(numSamples: number, noise: number):
+  Example2D[] {
+  function getSineLabel(p: Point) { return p.y >= 3*Math.sin(1.5*p.x) ? 1 : -1; }
+  // changed the points 
+  let points: Example2D[] = [];
+  // for (let i = 0; i < 5; i++) {
+  //   let x = normalRandom(0, 3)
+  //   let y = 3
+  //   let label = 1;
+  //   points.push({ x, y, label });
+  // }
+  // for (let i = 0; i < 10; i++) {
+  //   let x = normalRandom(0, 3)
+  //   let y = 5
+  //   let label = -1;
+  //   points.push({ x, y, label });
+  // }
+  for (let i = 0; i < numSamples; i++) {
+    let x = randUniform(-5, 5);
+    let padding = 0.3;
+    x += x > 0 ? padding : -padding;  // Padding.
+    let y = randUniform(-5, 5);
+    y += y > 0 ? padding : -padding;
+    let noiseX = randUniform(-5, 5) * noise;
+    let noiseY = randUniform(-5, 5) * noise;
+    let label = getSineLabel({ x: x + noiseX, y: y + noiseY });
+    points.push({ x, y, label });
+  }
+  return points;
+}
+
 
 /**
  * Returns a sample from a uniform [a, b] distribution.

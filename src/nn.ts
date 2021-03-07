@@ -22,7 +22,7 @@ export class Node {
   id: string;
   /** List of input links. */
   inputLinks: Link[] = [];
-  bias = 0.1;
+  bias = Math.random() - 0.5;
   /** List of output links. */
   outputs: Link[] = [];
   totalInput: number;
