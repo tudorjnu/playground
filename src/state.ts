@@ -169,7 +169,7 @@ export class State {
   sinY = false;
   dataset: dataset.DataGenerator = dataset.classifyTwoGaussData;
   regDataset: dataset.DataGenerator = dataset.regressPlane;
-  seed: string = "0.51547"; // 0.51547
+  //seed: string = "0.51547"; // 0.51547
   neuronButtons = false;
   hideBar = true;
   numHiddenLayers_hide = true;
