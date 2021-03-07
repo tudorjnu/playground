@@ -17,7 +17,7 @@ limitations under the License.
 
 body {
   font-family: "Helvetica", "Arial", sans-serif;
-  background-color: #f7f7f7;
+  background-color: #ffffff;
 }
 
 h1 {
@@ -459,7 +459,7 @@ canvas {
 
 .link {
   fill: none;
-  stroke: #aaa;
+  stroke: #777;
   stroke-width: 1;
 }
 
@@ -712,14 +712,14 @@ g.column rect {
 }
 
 #network .core .link {
-  stroke-dasharray: 9 1;
+  stroke-dasharray: 15 2;
   stroke-dashoffset: 1;
   /*-webkit-animation: 0.5s linear 0s infinite flowing;*/
 }
 
 /** Invisible thick links used for showing weight values on mouse hover. */
 #network .core .link-hover {
-  stroke-width: 8;
+  stroke-width: 30;
   stroke: black;
   fill: none;
   opacity: 0;
@@ -850,7 +850,7 @@ g.train circle {
 /* Article */
 
 article {
-  background: white;
+  background: #f7f7f7;
   padding: 80px 0;
   box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
   /*border-top: 1px solid rgba(0, 0, 0, 0.08);*/

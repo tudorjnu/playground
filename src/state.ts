@@ -168,11 +168,15 @@ export class State {
   sinY = false;
   dataset: dataset.DataGenerator = dataset.classifyCircleData;
   regDataset: dataset.DataGenerator = dataset.regressPlane;
-  seed: string = "0.51547"; // 0.51547
+  seed: string = "0.51547"; 
   neuronButtons = false;
   hideBar = false;
   numHiddenLayers_hide = true;
-
+  
+  // local additions; not added to URL (yet)
+  alwaysRandomizeNNParams = true;
+  setOutputWeightToOne = true;
+  
   /**
    * Deserializes the state from the url hash.
    */
