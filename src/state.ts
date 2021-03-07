@@ -136,9 +136,10 @@ export class State {
   ];
 
 
-// Activity chained neurons on circle data set
-// #dataset=circle&networkShape=3,1&initZero=true&hideBar=true&numHiddenLayers_hide=true
+// Activity spiral
+// #numHiddenLayers_hide=false&networkShape=4,3&dataset=spiral&neuronButtons=true&hideBar=false&initZero=false&activation=tanh
 // Set default 
+
   [key: string]: any;
   learningRate = 0.03;
   regularizationRate = 0;
@@ -151,12 +152,12 @@ export class State {
   activation = nn.Activations.TANH;
   regularization: nn.RegularizationFunction = null;
   problem = Problem.CLASSIFICATION;
-  initZero = true;
+  initZero = false;
   hideText = false;
   collectStats = false;
   numHiddenLayers = 2;
   hiddenLayerControls: any[] = [];
-  networkShape: number[] = [4,1];
+  networkShape: number[] = [4,3];
   x = true;
   y = true;
   xTimesY = false;
@@ -166,12 +167,12 @@ export class State {
   sinX = false;
   cosY = false;
   sinY = false;
-  dataset: dataset.DataGenerator = dataset.classifyCircleData;
+  dataset: dataset.DataGenerator = dataset.classifySpiralData;
   regDataset: dataset.DataGenerator = dataset.regressPlane;
   seed: string = "0.51547"; // 0.51547
-  neuronButtons = false;
+  neuronButtons = true;
   hideBar = false;
-  numHiddenLayers_hide = true;
+  numHiddenLayers_hide = false;
 
   /**
    * Deserializes the state from the url hash.

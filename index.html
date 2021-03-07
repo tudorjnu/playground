@@ -332,52 +332,51 @@ limitations under the License.
 
   <article id="article-text">
     <div class="l--body">
-      <h2>Can gradient descent do the hard work for us?</h2>
+      <h2>Can you design a neural network for this data set?</h2>
       <p>
-        This activity is the same the previous one, except that this time you
-        will not have to manually find suitable weights and biases, but you will
-        be able to let the <em>gradient-descent algorithm</em> find good parameters
-        for you!
+        In this activity, you will <em>design</em> a neural network topology
+        (that means, the neurons and the connections between them)
+        to capture a much more complex type of data points.
+      </p>
+      <p>
+        <em>What is the smallest neural network that you can find that 
+          correctly recognizes the spiral?</em>
       </p>
       <ol>
         <li>
           Click on the <i class="fas fa-play-circle"></i> play button to start
           the neural network training.
+          (Weights are automatically assign random initial values here.)
         </li>
         <li>
-          You will have to give the gradient-descent algorithm some non-zero 
-          initial values for the parameters!<br/>
-          Use the popups as before to initialize weights and biases.          
+          The initial network is too small to capture the spiral pattern;
+          use the <i class="fas fa-plus-circle"></i> add and 
+          <i class="fas fa-minus-circle"></i> remove buttons to adjust the
+          number of hidden layers and the number of neurons in each layer.
+        </li>
+        <li>
+          Use the <i class="fas fa-undo"></i> reset button to start with (new)
+          random initial values.
         </li>
       </ol>
+      <p>
+        Don't be too impatient; with increasing complexity of data and
+        neural networks, the number of rounds before gradient descent
+        reaches a stable state goes up substantially.
+      </p>
       
     <h2>Explanation</h2>
       <p>
-        In this activity, you use the gradient-descent algorithm to find good
-        parameters for the neural network.
-        It is quite impressive to see, how quickly it reaches a near-perfect seapration!
+        This activity demonstrates many of the core challenges with neural networks.
+        Making the network big and deep can increase its expressiveness 
+        (how well it represents complex shapes), but training becomes expensive,
+        needs lots of data, and the risk of overfitting increases 
+        (by allowing overly complicated and fine-grained shapes).
       </p>
       <p>
-        Gradient descent is a local optimization algorithm: The algorithm
-        proceeds in rounds. In each round, it is computed how each weight
-        and each bias influenced the final prediction of each data point.
-        Based on that, and which data points are currently incorrectly classified,
-        a <em>suggested improvement</em> (the “gradient”) is computed and
-        added to the current value of all parameters.
-        Each step makes the prediction slightly better (on the training data!).
-      </p>
-      <p>
-        Over time, the gradient-descent method reaches a state in which no 
-        further improvements happen (a <em>stationary state</em>);
-        then the parameters remain unchanged.
-      </p>
-      <p>
-        An important limitation of such local optimization methods is that
-        they depend on the starting state. For example, 
-        having all weights and biases equal to zero is a stationary state,
-        but clearly not one that yields a good prediction!
-        Luckily, for most neural networks it works just fine to start 
-        with randomly chosen initial values.
+        But it also highlights the incredible versatility of deep neural networks
+        and gradient-descent algorithms: the same method can be used for many
+        different classification tasks, and it often yields very accurate results.
       </p>
     </div>
 
