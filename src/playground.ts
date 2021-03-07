@@ -47,8 +47,8 @@ function scrollTween(offset) {
   };
 }
 
-const RECT_SIZE = 30;
-const BIAS_SIZE = 5;
+const RECT_SIZE = 50;
+const BIAS_SIZE = 25;
 const NUM_SAMPLES_CLASSIFY = 500;
 const NUM_SAMPLES_REGRESS = 1200;
 const DENSITY = 100;
@@ -159,7 +159,7 @@ let heatMap =
     { showAxes: true });
 let linkWidthScale = d3.scale.linear()
   .domain([0, 5])
-  .range([1, 10])
+  .range([3, 15])
   .clamp(true);
 let colorScale = d3.scale.linear<string, number>()
   .domain([-1, 0, 1])
@@ -485,8 +485,8 @@ function drawNode(cx: number, cy: number, nodeId: string, isInput: boolean,
     nodeGroup.append("rect")
       .attr({
         id: `bias-${nodeId}`,
-        x: -BIAS_SIZE - 2,
-        y: RECT_SIZE - BIAS_SIZE + 3,
+        x: -BIAS_SIZE - 5,
+        y: RECT_SIZE - BIAS_SIZE + 10,
         width: BIAS_SIZE,
         height: BIAS_SIZE,
       }).on("mouseenter", function () {
